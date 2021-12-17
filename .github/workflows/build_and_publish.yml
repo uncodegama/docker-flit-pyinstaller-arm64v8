@@ -33,5 +33,5 @@ jobs:
       - name: Build & Push
         run: |
           docker build --platform linux/amd64 -t docker-flit-pyinstaller-arm64v8 . 
-          docker tag uncodegama/docker-flit-pyinstaller-arm64v8:latest
-          docker push uncodegama/docker-flit-pyinstaller-arm64v8:latest
+          docker tag docker-flit-pyinstaller-arm64v8 uncodegama/docker-flit-pyinstaller-arm64v8:latest
+          docker image push uncodegama/docker-flit-pyinstaller-arm64v8:latest
