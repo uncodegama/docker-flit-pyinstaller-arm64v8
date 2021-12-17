@@ -30,11 +30,8 @@ jobs:
         with:
           install: true
 
-      - name: Build
+      - name: Build & Push
         run: |
           docker build --platform linux/amd64 -t docker-flit-pyinstaller-arm64v8 . 
-
-      - name: Push
-        run: |
-          docker image tag ${{ steps.meta.outputs.tags }} uncodegama/docker-flit-pyinstaller-arm64v8:latest
-          docker image push uncodegama/docker-flit-pyinstaller-arm64v8:latest
+          docker tag uncodegama/docker-flit-pyinstaller-arm64v8:latest
+          docker push uncodegama/docker-flit-pyinstaller-arm64v8:latest
